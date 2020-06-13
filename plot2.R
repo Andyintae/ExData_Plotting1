@@ -26,22 +26,18 @@ power_n <- power %>%
   filter(Date == "2007-02-01" | Date == "2007-02-02")
 
 
-# 3. Plot1 ------------------------------------------------------------
+# 3. Plot2 ----------------------------------------------------------------
 
-plot1 <- power_n %>% ggplot(aes(Global_active_power))+
-  geom_histogram(bins = 18, fill = "#FF0033") +
-  labs(x = "Global active power (kilowatts)", y = "Frequency", title = "Global Active Power") +
-  scale_x_continuous(breaks = seq(0,6,2))+
-  scale_y_continuous(breaks = seq(0,1200,200))+
-  theme_classic()
-
-
+plot2 <- power_n %>% ggplot(aes(Date_time, Global_active_power))+
+  geom_line()+
+  scale_x_datetime(date_labels = "%a %H") +
+  labs(x = "", y = "Global active power (kilowatts)")
 
 # 4. save to PNG file -----------------------------------------------------
 
 dev.cur()
 
-png(file = "plot1.PNG")
-plot1
+png(file = "plot2.PNG")
+plot2
 
 dev.off()
