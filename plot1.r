@@ -29,8 +29,9 @@ power_n <- power %>%
 # 3. Plot1 ------------------------------------------------------------
 
 plot1 <- power_n %>% ggplot(aes(Global_active_power))+
-  geom_histogram(bins = 18, fill = "#FF0033") +
-  labs(x = "Global active power (kilowatts)", y = "Frequency", title = "Global Active Power") +
+  geom_histogram(bins = 18, fill = "#FF0033", col = "black") +
+  ggtitle("Global Active Power")+
+  labs(x = "Global active power (kilowatts)", y = "Frequency") +
   scale_x_continuous(breaks = seq(0,6,2))+
   scale_y_continuous(breaks = seq(0,1200,200))+
   theme_classic()
@@ -41,7 +42,7 @@ plot1 <- power_n %>% ggplot(aes(Global_active_power))+
 
 dev.cur()
 
-png(file = "plot1.PNG")
+png(file = "plot1.PNG",width=480, height=480)
 plot1
 
 dev.off()

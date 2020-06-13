@@ -40,7 +40,7 @@ plot3 <- power_long %>% ggplot(aes(Date_time, reading, col = Sub_metering))+
 
 dev.cur()
 
-png(file = "plot3.PNG")
+png(file = "plot3.PNG",width=480, height=480)
 plot3
 
 dev.off()

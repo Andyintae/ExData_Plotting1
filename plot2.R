@@ -37,7 +37,7 @@ plot2 <- power_n %>% ggplot(aes(Date_time, Global_active_power))+
 
 dev.cur()
 
-png(file = "plot2.PNG")
+png(file = "plot2.PNG",width=480, height=480)
 plot2
 
 dev.off()

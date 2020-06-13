@@ -65,7 +65,7 @@ plot7 <- power_n %>% ggplot(aes(Date_time, Global_reactive_power))+
 
 dev.cur()
 
-png(file = "plot4.PNG")
+png(file = "plot4.PNG",width=480, height=480)
 grid.arrange(plot4, plot5, plot6, plot7, nrow = 2, ncol = 2)
 
 dev.off()
